@@ -1,6 +1,6 @@
 {% set python_min = "3.11" %}
 {% set name = "hololinked" %}
-{% set version = "0.2.11" %}
+{% set version = "0.3.4" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hololinked-{{ version }}.tar.gz
-  sha256: e85b7e1b04daf48aeda58e373ea18cf808c6ce2c7b5f3848dbddc899faabcb32
+  sha256: 0318cc9d3eb44bce7b19629586d61d0fda00c445f1186b612545cf522122920c
 
 build:
   noarch: python
