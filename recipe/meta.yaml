@@ -34,6 +34,7 @@ requirements:
     - httpx >=0.28.1,<29.0
     - sniffio >=1.3.1,<2.0
     - pymongo >=4.15.2
+    - structlog >=25.5.0
 
 test:
   imports:
@@ -47,7 +48,7 @@ test:
 
 about:
   home: https://github.com/hololinked-dev/hololinked
-  summary: A ZMQ-based Object Oriented RPC tool-kit for IoT/data acquisition or controlling generic python objects.
+  summary: A ZMQ-based protocol-agnostic object oriented RPC toolkit primarily focussed for instrumentation control, data acquisition or IoT
   license: Apache-2.0
   license_file: license.txt
 
