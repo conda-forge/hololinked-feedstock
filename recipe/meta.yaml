@@ -41,7 +41,15 @@ test:
     - hololinked
   commands:
     - pip install aiomqtt
-    - python -c "import hololinked, aiomqtt; print('ok')"
+    - python -c "import hololinked, aiomqtt; print('basic import ok')"
+    - python -c "from hololinked.core import Thing, Property, action, Event; print('core submodule import ok')"
+    - python -c "from hololinked.serializers import JSONSerializer, MsgpackSerializer; print('serializers submodule import ok')"
+    - python -c "from hololinked.td import ThingModel; print('td submodule import ok')"
+    - python -c "from hololinked.server.zmq import ZMQServer; print('server.zmq submodule import ok')"
+    - python -c "from hololinked.server.http import HTTPServer; print('server.http submodule import ok')"
+    - python -c "from hololinked.server.mqtt import MQTTPublisher; print('server.mqtt submodule import ok')"
+    - python -c "from hololinked.client import ClientFactory, ObjectProxy; print('client submodule import ok')"
+    - python -c "import hololinked.client.zmq; import hololinked.client.http; import hololinked.client.mqtt; print('client protocol submodules http,mqtt,zmq import ok')"
   requires:
     - pip
     - python {{ python_min }}
