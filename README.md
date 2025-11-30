@@ -3,11 +3,11 @@ About hololinked-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hololinked-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/VigneshVSV/hololinked
+Home: https://github.com/hololinked-dev/hololinked
 
-Package license: BSD-3-Clause
+Package license: Apache-2.0
 
-Summary: A ZMQ-based Object Oriented RPC tool-kit for instrument control/data acquisition or controlling generic python objects.
+Summary: A ZMQ-based Object Oriented RPC tool-kit for IoT/data acquisition or controlling generic python objects.
 
 Current build status
 ====================
