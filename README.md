@@ -7,7 +7,7 @@ Home: https://github.com/hololinked-dev/hololinked
 
 Package license: Apache-2.0
 
-Summary: A ZMQ-based Object Oriented RPC tool-kit for IoT/data acquisition or controlling generic python objects.
+Summary: A ZMQ-based protocol-agnostic object oriented RPC toolkit primarily focussed for instrumentation control, data acquisition or IoT
 
 Current build status
 ====================
