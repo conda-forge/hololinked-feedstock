@@ -1,14 +1,14 @@
 {% set python_min = "3.11" %}
 {% set name = "hololinked" %}
-{% set version = "0.3.12" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hololinked-{{ version }}.tar.gz
-  sha256: ae005e7440c90bfb7a7c84b318477418e5611e8182b4115a688f5f54f57b4c4d
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/hololinked-{{ version }}.tar.gz
+  sha256: 704a7d0bc01aaa2cce177143ff2cea4dc40c833f189f3e76daab3b71ad799066
 
 build:
   noarch: python
@@ -23,12 +23,15 @@ requirements:
   run:
     - python >={{ python_min }}
     - argon2-cffi >=23.1.0
+    - bcrypt ==4.3.0
+    - cryptography >=46.0.5
     - ifaddr >=0.2.0,<0.3
     - msgspec >=0.18.6
     - pyzmq >=25.1.0,<26.2
     - sqlalchemy >=2.0.21
     - sqlalchemy-utils >=0.41
     - pydantic >=2.8.0,<3.0.0
+    - pyjwt >=2.11.0
     - tornado >=6.3.3
     - jsonschema >=4.22.0,<5.0
     - httpx >=0.28.1,<29.0
@@ -40,11 +43,10 @@ test:
   imports:
     - hololinked
   commands:
-    - pip install aiomqtt
     - python -c "import hololinked, aiomqtt; print('basic import ok')"
     - python -c "from hololinked.core import Thing, Property, action, Event; print('core submodule import ok')"
     - python -c "from hololinked.serializers import JSONSerializer, MsgpackSerializer; print('serializers submodule import ok')"
-    - python -c "from hololinked.td import ThingModel; print('td submodule import ok')"
+    - python -c "from hololinked.metadata.td import ThingModel; print('td submodule import ok')"
     - python -c "from hololinked.server.zmq import ZMQServer; print('server.zmq submodule import ok')"
     - python -c "from hololinked.server.http import HTTPServer; print('server.http submodule import ok')"
     - python -c "from hololinked.server.mqtt import MQTTPublisher; print('server.mqtt submodule import ok')"
@@ -53,6 +55,7 @@ test:
   requires:
     - pip
     - python {{ python_min }}
+    - aiomqtt
 
 about:
   home: https://github.com/hololinked-dev/hololinked
