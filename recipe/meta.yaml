@@ -1,6 +1,6 @@
 {% set python_min = "3.11" %}
 {% set name = "hololinked" %}
-{% set version = "0.4.1" %}
+{% set version = "0.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/hololinked-{{ version }}.tar.gz
-  sha256: dc626c7c82723ecfb3b820bded90fb888f290c2cf2bfb73d7e78c8c737a70b8f
+  sha256: fbeb082324a84bb41cba94fbdfe786c8184c2a094a4c96f912bf55701a45be5e
 
 build:
   noarch: python
